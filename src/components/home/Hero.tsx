@@ -18,11 +18,7 @@ function Hero() {
 
   const handleJobsGenerated = () => {
     toast.success("Job generated successfully", {
-      style: {
-        background: "#ECFDF5",
-        color: "#166534",
-        border: "1px solid #86EFAC",
-      },
+      duration: 3000,
     });
     setIsLoadingJobs(true);
     setJobsGenerated(false);

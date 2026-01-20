@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { ModeToggle } from "../theme/mode-toggle";
 import { SignInButton, SignUpButton, UserButton, useUser } from "@clerk/nextjs";
+import { PopoverCRM } from "../PopoverCRM";
 
 export default function Navbar() {
   const { isSignedIn } = useUser();
@@ -45,7 +46,9 @@ export default function Navbar() {
 </Link>
 
         <div className="flex items-center gap-3">
+           <PopoverCRM />
           <ModeToggle />
+         
           {isSignedIn ? (
             <>
               <UserButton />

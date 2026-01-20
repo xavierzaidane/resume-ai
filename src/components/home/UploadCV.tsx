@@ -404,21 +404,21 @@ export default function UploadCV({ onJobsGenerated }: UploadCVProps) {
               type="button"
               onClick={handleGenerateJobs}
               disabled={isUploading}
-              className={`w-full max-w-80 text-sm px-6 py-3 rounded-lg font-semibold 
-    ${isUploading 
-      ? 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-800/90' // Gray background when uploading
+              className={`w-full max-w-80 text-sm px-6 py-3 rounded-lg font-semibold
+    ${isUploading
+      ? 'bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-800/90'
       : 'bg-gradient-to-r from-primary to-primary/70 text-white hover:from-primary/90 hover:to-primary/80'
     }
-    transition-all duration-200 
+    transition-all duration-200
     shadow-sm hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed`}
               aria-label={isUploading ? "Processing..." : "Generate job recommendations"}
             >
               {isUploading ? (
                 <div className="flex items-center justify-center gap-2">
-                  <Loader 
-                    variant="text-shimmer" 
+                  <Loader
+                    variant="text-shimmer"
                     text={uploadStatus || "Processing..."}
-                    className="text-md" // Made text brighter
+                    className="text-md"
                   />
                 </div>
               ) : (
