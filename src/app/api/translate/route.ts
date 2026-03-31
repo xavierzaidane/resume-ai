@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     const text = await request.json();
 
     const completion = await llmClient.chat.completions.create({
-      model: "deepseek/deepseek-r1-distill-llama-70b:free",
+      model: "arcee-ai/trinity-mini:free",
       messages: [
         {
           role: "system",
