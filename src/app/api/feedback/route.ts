@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "deepseek/deepseek-r1-distill-llama-70b:free",
+      model: "arcee-ai/trinity-mini:free",
       messages: [
         {
           role: "system",
@@ -89,17 +89,17 @@ Follow the JSON format strictly.
         parsed = JSON.parse(cleanedJson);
       } catch (parseErr) {
         console.error("Failed to parse cleaned JSON:", parseErr);
-        return NextResponse.json({ 
-          error: "Invalid JSON response from AI model" 
+        return NextResponse.json({
+          error: "Invalid JSON response from AI model"
         }, { status: 422 });
       }
     }
 
     // Validate the parsed data structure
-    if (!parsed?.overall_assessment || !parsed?.detailed_improvements || 
+    if (!parsed?.overall_assessment || !parsed?.detailed_improvements ||
         !parsed?.skill_evaluation || !parsed?.summary_of_readiness) {
-      return NextResponse.json({ 
-        error: "Invalid feedback data structure" 
+      return NextResponse.json({
+        error: "Invalid feedback data structure"
       }, { status: 422 });
     }
 
